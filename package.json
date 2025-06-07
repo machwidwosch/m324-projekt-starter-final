@@ -4,6 +4,7 @@
   "description": "A very simple chat app using websockets and typescript",
   "main": "index.js",
   "scripts": {
+    "type": "module",
     "build": "tsc --project tsconfig.json",
     "dev": "ts-node-dev --respawn server/index.ts",
     "start": "node build/index.js"
@@ -12,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
+    "@eslint/js": "^9.28.0",
     "@types/connect-livereload": "^0.6.3",
     "@types/express": "^5.0.0",
     "@types/http-server": "^0.12.4",
@@ -21,14 +22,17 @@
     "@types/lodash": "^4.17.16",
     "@types/node": "^22.13.9",
     "@types/ws": "^8.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.33.1",
+    "@typescript-eslint/parser": "^8.33.1",
     "connect-livereload": "^0.6.1",
-    "globals": "^16.0.0",
+    "eslint": "^9.28.0",
+    "globals": "^16.2.0",
     "livereload": "^0.9.3",
     "prettier": "^3.5.3",
     "ts-jest": "^29.2.6",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.0"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1"
   },
   "dependencies": {
     "express": "^4.21.2",
