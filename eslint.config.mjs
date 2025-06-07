@@ -1,12 +1,27 @@
-import globals from 'globals';
-import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import js from '@eslint/js';
 
-/** @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ['**/*.{ts}'] },
-  { languageOptions: { globals: globals.browser } },
-  { ignores: ['*.js', 'client', 'build'] },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
+    js.configs.recommended,
+    {
+        languageOptions: {
+            ecmaVersion: 'latest',
+            sourceType: 'module',
+            globals: {
+                document: 'readonly',
+                window: 'readonly',
+                console: 'readonly',
+                localStorage: 'readonly',
+                setTimeout: 'readonly',
+                fetch: 'readonly',
+                WebSocket: 'readonly',
+                module: 'readonly',
+            },
+        },
+        ignores: ['dist/', 'node_modules/'],
+        rules: {
+            'no-unused-vars': 'warn',
+            'no-undef': 'error',
+        },
+    },
 ];
+
