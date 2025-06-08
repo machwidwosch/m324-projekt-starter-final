@@ -1,22 +1,20 @@
-const WebSocket = class {
+export class Server {
+    clients = new Set<any>();
+    on = jest.fn();
+    constructor(_: any) {}
+}
+
+export default class WebSocket {
     static OPEN = 1;
+    static CLOSED = 3;
+
     readyState = WebSocket.OPEN;
     send = jest.fn();
     close = jest.fn();
     on = jest.fn();
-};
+    constructor(_: string) {}
+}
 
-const Server = class {
-    constructor(_) {
-        this.clients = new Set();
-        this.on = jest.fn();
-    }
-};
-
-module.exports = {
-    default: WebSocket,
-    Server
-};
 
 
 
