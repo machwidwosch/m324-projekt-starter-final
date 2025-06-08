@@ -2,15 +2,15 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "commonjs",
-    "lib": ["ESNext"],
     "allowJs": true,
     "outDir": "build",
     "rootDir": "server",
     "strict": true,
     "esModuleInterop": true,
     "types": ["node", "jest"],
+    "lib": ["dom", "esnext"],
     "skipLibCheck": true
   },
-  "include": ["server/**/*"],
+  "include": ["server/**/*", "__mocks__"],
   "exclude": ["server/**/*.spec.ts"]
 }

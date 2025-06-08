@@ -3,7 +3,7 @@ import {
   storeUsernameLocally,
   generateBackendUrl,
   generateMessage,
-} from './utils.js';
+} from './utils.ts';
 
 const username = generateRandomUser();
 storeUsernameLocally(username);
