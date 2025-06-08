@@ -1,17 +1,20 @@
-# Use the official Node.js image as the base image
-FROM node:18
+# Dockerfile
+FROM node:18-alpine
 
-# Set the working directory inside the container
-WORKDIR ...
+# Arbeitsverzeichnis erstellen
+WORKDIR /app
 
-# Copy the package.json and package-lock.json files to the container
-COPY ...
+# Nur package.json + lock kopieren (für Caching)
+COPY package*.json ./
 
-# Install the dependencies
-RUN ...
+# Dependencies installieren
+RUN npm install
 
-# Copy the source code to the container
-COPY ...
+# Restliche Files kopieren
+COPY . .
 
-# Start the server when the container starts
-CMD ...
+# Build ausführen
+RUN npm run build
+
+# Startbefehl
+CMD ["node", "build/server/index.js"]
