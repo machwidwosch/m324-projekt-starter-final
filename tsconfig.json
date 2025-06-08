@@ -4,13 +4,13 @@
     "module": "commonjs",
     "allowJs": true,
     "outDir": "build",
-    "rootDir": "server",
+    "rootDir": ".",
     "strict": true,
     "esModuleInterop": true,
     "types": ["node", "jest"],
     "lib": ["dom", "esnext"],
     "skipLibCheck": true
   },
-  "include": ["server/**/*", "__mocks__"],
+  "include": ["server/**/*", "client/**/*", "__mocks__"],
   "exclude": ["server/**/*.spec.ts"]
 }
