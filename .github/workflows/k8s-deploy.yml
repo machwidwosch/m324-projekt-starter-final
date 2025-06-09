@@ -1,0 +1,21 @@
+name: Simuliertes Kubernetes Deployment
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Simuliere Deployment
+        run: |
+          echo "👉 Anwendung würde jetzt mit folgenden Ressourcen deployed:"
+          echo "---"
+          cat k8s/deployment.yaml
+          echo "---"
+          cat k8s/service.yaml
+          echo "✅ Simulierter Kubernetes-Deployment erfolgreich."
